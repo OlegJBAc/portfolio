@@ -1,0 +1,88 @@
+.aboutMe{
+    width: 100%;
+    padding: 3em 0em;
+    &__content{
+        width: 80%;
+        padding: 2em 12em 2em 0em;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    &__header{
+        width: 80%;
+    }
+    &__description{
+        width: 85%;
+        word-wrap: break-word;
+        margin: 0 auto;
+        animation: show-desc 3s ease 1;
+        font-size: 1em;
+        line-height: 170%;
+    }
+    h2{
+        display: inline-block;
+        width: 33ch;
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid #ffa500;
+        animation: flash-border 0.85s step-end infinite,
+                   printing-text 3s steps(33) 1;
+    }
+}
+@keyframes show-desc {
+    0% {
+        font-size: 0em;
+        opacity: 0;
+    }
+    100% {
+        font-size: 1em;
+        opacity: 1;
+    }
+}
+@keyframes flash-border {
+    0%{
+        border-color: rgb(164, 94, 255);
+    }
+    50%{
+        border-color: transparent;
+    }
+    100%{
+        border-color: rgb(164, 94, 255);
+    }
+}
+@keyframes printing-text {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 33ch;
+    }
+}
+.avatar{
+    width: 20%;
+    &__img{
+        width: 235px;
+        height: 300px;
+        border-radius: 0.5em;
+        transform: rotate(0deg);
+        animation-name: rotateAvatar;
+        animation-duration: 3s;
+    }
+}
+
+@keyframes rotateAvatar {
+    0% {
+        transform: rotate(45deg);
+        border-radius: 0.5em;
+    }
+    50% {
+        border-radius: 50%;
+        width: 3px;
+    }
+    100%{
+        transform: rotate(1080deg);
+        border-radius: 0.5em;
+    }
+}

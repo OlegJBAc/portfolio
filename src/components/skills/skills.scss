@@ -1,0 +1,75 @@
+$transitDuration: 1s 1.5s 2s 2.5s 3s;
+
+.base__stack{
+    ul{
+        li{
+            transform: translateX(-300%);
+        }
+    }
+    &.exited{
+        ul{
+            li{
+               transform: translateX(-300%);        
+                img{
+                    margin-right: 1em;
+                }
+            }
+        }
+    }
+    &.entered{
+        ul{
+            
+            li{
+                transform: translateX(-100%);
+                @for $i from 1 through length($transitDuration){
+                    &:nth-child( #{$i} ){
+                        transition-duration: nth($transitDuration, $i);
+                    }
+                }
+                img{
+                    margin-right: 1em;
+                }
+            }
+    
+        }
+    }
+}
+.others{
+    ul{
+        li{
+            transform: translateX(300%);
+        }
+    }
+    &.exited{
+        ul{
+            li{
+                display: flex;
+                justify-content: flex-end;
+                transform: translateX(300%);
+                img{
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+    &.entered{
+        ul{
+            li{
+                display: flex;
+                justify-content: flex-end;
+                transform: translateX(100%);
+                @for $i from 1 through length($transitDuration){
+                    &:nth-child( #{$i} ){
+                        transition-duration: nth($transitDuration, $i);
+                    }
+                }
+                img{
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,91 @@
+.myProjects{
+    ul{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+}
+.projects{
+    &__item{
+        box-sizing: border-box;
+        width: 37%;
+        min-height: 400px;
+        background: rgb(101, 0, 184);
+        color: white;
+        h3{
+            margin: 0.5em 0;
+        }
+        figure{
+            margin: 0;
+            position: relative;
+            p{
+                width: 90%;
+                margin: 0 auto;
+                position: relative;
+            }
+            p:before{
+                content: '';
+                position: absolute;
+                top: -5%;
+                right: -1.5%;
+                bottom: -20%;
+                left: -1.5%;
+                border-top: solid 2px;
+                border-bottom: solid 2px;
+                transition: 0.3s;
+                transform: scaleX(0);
+            }
+        }
+        figure:before{
+            content: '';
+            position: absolute;
+            top: 3.5%;
+            right: 3.5%;
+            bottom: -2%;
+            left: 3.55%;
+            border-top: solid 2px;
+            transition: 0.3s;
+            transform: scaleX(0);
+        }
+        figure:hover:before{
+            transform: scale(1);
+        }
+        figure:after{
+            content: '';
+            position: absolute;
+            top: 3.5%;
+            right: 3.5%;
+            bottom: -3%;
+            left: 3.5%;
+            border-left: solid 2px;
+            border-right: solid 2px;
+            transition: 0.3s;
+            transform: scaleY(0);
+        }
+        figure:hover:after{
+            transform: scale(1);
+        }
+        figure:hover{
+            p:before{
+                transform: scale(1);
+            }
+
+        }
+        img{
+            width: 85%;
+            height: 230px;
+            margin: 2em 0em 0em 0em;
+        }
+        a{
+            position: sticky;
+            z-index: 50;
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}

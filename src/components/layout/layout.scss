@@ -1,0 +1,11 @@
+.layout{
+    width: 100%;
+}
+.layout.dark{
+    background: rgba(0, 0, 0, 0.918);
+    color: white;
+}
+.layout.light{
+    background: rgba(255, 255, 255, 0.918);
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,17 @@
+.skills{
+    &__content{
+        display: flex;
+        justify-content: space-around;
+        ul{
+            list-style: none;
+            li{
+                display: flex;
+                line-height: 200%;
+                img{
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+        }
+    }
+}
