@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.2d6cfa85.css",
+    "main.js": "/my-portfolio/static/js/main.aeb0d247.js",
+    "static/js/787.f35f70c9.chunk.js": "/my-portfolio/static/js/787.f35f70c9.chunk.js",
+    "static/media/react.png": "/my-portfolio/static/media/react.9afbb41a83f0b139f044.png",
+    "static/media/myAvatar.jpg": "/my-portfolio/static/media/myAvatar.8b5de104c3e271574f0b.jpg",
+    "static/media/html_css.png": "/my-portfolio/static/media/html_css.51c5e4764bd72ed944d3.png",
+    "static/media/telegram_logo.webp": "/my-portfolio/static/media/telegram_logo.be6948c6962cac4685eb.webp",
+    "static/media/ts.png": "/my-portfolio/static/media/ts.5456c83de8d7fe38aa7e.png",
+    "static/media/formik.png": "/my-portfolio/static/media/formik.95443f3a820d21784c67.png",
+    "static/media/npm_yarn.webp": "/my-portfolio/static/media/npm_yarn.ce87be79f36a7abfd9f0.webp",
+    "static/media/js.png": "/my-portfolio/static/media/js.85d8205a84b3b849ec83.png",
+    "static/media/email_logo.webp": "/my-portfolio/static/media/email_logo.3294b83f2317cb4c2750.webp",
+    "index.html": "/my-portfolio/index.html",
+    "main.2d6cfa85.css.map": "/my-portfolio/static/css/main.2d6cfa85.css.map",
+    "main.aeb0d247.js.map": "/my-portfolio/static/js/main.aeb0d247.js.map",
+    "787.f35f70c9.chunk.js.map": "/my-portfolio/static/js/787.f35f70c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d6cfa85.css",
+    "static/js/main.aeb0d247.js"
+  ]
+}
