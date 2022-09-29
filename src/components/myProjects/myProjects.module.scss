@@ -11,9 +11,9 @@
     &__item{
         box-sizing: border-box;
         width: 37%;
-        min-height: 400px;
         background: rgb(101, 0, 184);
         color: white;
+        padding-bottom: 1em;
         h3{
             margin: 0.5em 0;
         }
@@ -74,8 +74,8 @@
 
         }
         img{
-            width: 85%;
-            height: 230px;
+            width: 20vw;
+            height: 13vw;
             margin: 2em 0em 0em 0em;
         }
         a{
@@ -86,6 +86,25 @@
         }
         a:hover{
             text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .myProjects{
+        ul{
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    .projects{
+        &__item{
+            width: 60%;
+            margin: 1em 1.5em 0em 0em;
+            img{
+                width: 33vw;
+                height: 20vw;
+            }
         }
     }
 }

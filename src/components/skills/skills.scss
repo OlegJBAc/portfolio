@@ -18,9 +18,8 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
     }
     &.entered{
         ul{
-            
             li{
-                transform: translateX(-100%);
+                transform: translateX(-115%);
                 @for $i from 1 through length($transitDuration){
                     &:nth-child( #{$i} ){
                         transition-duration: nth($transitDuration, $i);
@@ -30,7 +29,6 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
                     margin-right: 1em;
                 }
             }
-    
         }
     }
 }
@@ -72,4 +70,86 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
 }
 
 
+@media screen and (max-width: 1200px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-85%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(60%);
+                }
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 992px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-35%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(20%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-15%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(0%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-95%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(80%);
+                }
+            }
+        }
+    }
+}

@@ -55,3 +55,26 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 992px){
+    .contact{
+        padding: 3em 0;
+        &__forms{
+            width: 80%;
+        }
+        &__row_one{
+            flex-direction: column;
+            margin-bottom: 1em;
+            input{
+                width: 90%;
+                margin: 0em auto;
+                padding: 0.5em;
+                font-size: 1.2em;
+                border-radius: 0.3em;
+            }
+            #contact__email{
+                margin-bottom: 0.8em;
+            }
+        }
+    }
+}

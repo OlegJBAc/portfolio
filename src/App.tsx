@@ -27,6 +27,7 @@ const App = () => {
     contactNow: 0,
     contacts: 0,
   })
+  
   return (
     <ThemeProvider>
       <Layout>

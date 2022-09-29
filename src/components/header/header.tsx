@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { coordinatesOfSectionsType } from '../../App';
 import useTheme from '../../hooks/useTheme';
 import s from './header.module.scss';
@@ -9,6 +9,8 @@ import cnBind from 'classnames/bind'
 const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
   // @ts-ignore
   const { type, setType } = useTheme()
+  const [ adaptiveMenuActive, setAdaptiveMenuActive ] = useState(false)
+
   const scrollToSection = (section: 'aboutMe' | 'skills' | 'myProjects' | 'contactNow' | 'contacts') => () => {
     window.scrollTo({ top: coordinatesOfSections[section], left: 0, behavior: 'smooth' })
   }
@@ -29,7 +31,17 @@ const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
               onClick={setTheme}>
         
       </button>
-      <ul className={s.header__nav}>
+      <button className={cx('sideBarVis__btn', {
+                light: type === 'Light',
+                dark: type === 'Dark',
+            })} id={s.sideBar__visible}
+            onClick={() => setAdaptiveMenuActive(!adaptiveMenuActive)}>
+        <span></span>
+      </button>
+      <ul className={cx('header__nav', {
+                active: adaptiveMenuActive,
+                notActive: !adaptiveMenuActive,
+              })}>
         <li onClick={scrollToSection('aboutMe')}>About me</li>
         <li onClick={scrollToSection('skills')}>Skills</li>
         <li onClick={scrollToSection('myProjects')}>My projects</li>

@@ -30,7 +30,7 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
                 <Formik initialValues={{ name: '', email: '', phone: '', message: '' }} onSubmit={submit}>
                     <Form className={s.contact__forms}>
                         <div className={s.contact__row_one}>
-                            <Field name='name' placeholder='Enter your name...'/>
+                            <Field name='name' placeholder='Enter your name...' id={s.contact__email}/>
                             <Field type="email" name='email' placeholder='Enter your email...'/>
                         </div>
                         <div className={s.contact__row_two}>
