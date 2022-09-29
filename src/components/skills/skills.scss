@@ -114,6 +114,7 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
 
 @media screen and (max-width: 768px) {
     .base__stack{
+        font-size: 0.85em;
         &.entered{
             ul{
                 li{
@@ -123,6 +124,7 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
         }
     }
     .others{
+        font-size: 0.9em;
         &.entered{
             ul{
                 li{
@@ -148,6 +150,89 @@ $transitDuration: 1s 1.5s 2s 2.5s 3s;
             ul{
                 li{
                     transform: translateX(80%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-95%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(80%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-65%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(50%);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 410px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-40%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(25%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .base__stack{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(-15%);
+                }
+            }
+        }
+    }
+    .others{
+        &.entered{
+            ul{
+                li{
+                    transform: translateX(0%);
                 }
             }
         }

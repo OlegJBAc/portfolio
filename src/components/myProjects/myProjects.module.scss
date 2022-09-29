@@ -1,6 +1,6 @@
 .myProjects{
     ul{
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -13,69 +13,52 @@
         width: 37%;
         background: rgb(101, 0, 184);
         color: white;
-        padding-bottom: 1em;
         h3{
             margin: 0.5em 0;
         }
         figure{
-            margin: 0;
             position: relative;
-            p{
-                width: 90%;
-                margin: 0 auto;
-                position: relative;
-            }
-            p:before{
+            margin: 1em;
+            padding-bottom: 1em;
+            line-height: 170%;
+            &::before{
                 content: '';
                 position: absolute;
-                top: -5%;
-                right: -1.5%;
-                bottom: -20%;
-                left: -1.5%;
-                border-top: solid 2px;
-                border-bottom: solid 2px;
-                transition: 0.3s;
+                top: calc(0%);
+                display: block;
+                width: calc(100% + 2px);
+                height: 100%;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                transition-duration: 0.2s;
                 transform: scaleX(0);
             }
-        }
-        figure:before{
-            content: '';
-            position: absolute;
-            top: 3.5%;
-            right: 3.5%;
-            bottom: -2%;
-            left: 3.55%;
-            border-top: solid 2px;
-            transition: 0.3s;
-            transform: scaleX(0);
-        }
-        figure:hover:before{
-            transform: scale(1);
-        }
-        figure:after{
-            content: '';
-            position: absolute;
-            top: 3.5%;
-            right: 3.5%;
-            bottom: -3%;
-            left: 3.5%;
-            border-left: solid 2px;
-            border-right: solid 2px;
-            transition: 0.3s;
-            transform: scaleY(0);
-        }
-        figure:hover:after{
-            transform: scale(1);
-        }
-        figure:hover{
-            p:before{
-                transform: scale(1);
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: calc(100% + 1px);
+                bottom: calc(0% - 1px);
+                display: block;
+                width: 100%;
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+                transition-duration: 0.2s;
+                transform: scaleY(0);
             }
-
+            &:hover{
+                &::before{
+                    transform: scaleX(1);
+                }
+                &::after{
+                    transform: scaleY(1);
+                }
+            }
         }
+        
         img{
-            width: 20vw;
-            height: 13vw;
+            width: 26vw;
+            height: 17vw;
             margin: 2em 0em 0em 0em;
         }
         a{
@@ -90,6 +73,7 @@
     }
 }
 
+
 @media screen and (max-width: 992px) {
     .myProjects{
         ul{
@@ -99,11 +83,11 @@
     }
     .projects{
         &__item{
-            width: 60%;
+            width: 80%;
             margin: 1em 1.5em 0em 0em;
             img{
-                width: 33vw;
-                height: 20vw;
+                width: 50vw;
+                height: 35vw;
             }
         }
     }

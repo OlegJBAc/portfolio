@@ -1,9 +1,9 @@
 .aboutMe{
     width: 100%;
-    padding: 3em 0em;
+    padding: 2em 0em 2em 0em;
     &__content{
-        width: 80%;
-        padding: 2em 12em 2em 0em;
+        width: 85%;
+        padding: 1.5em 0em 2em 0em;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
@@ -85,7 +85,6 @@
         border-radius: 0.5em;
     }
 }
-
 @media screen and (max-width: 768px){
     .aboutMe{
         &__content{
@@ -95,9 +94,24 @@
             margin: 0;
             padding: 2em 0em 2em 0em;
         }
+        &__description{
+            font-size: 0.8em;
+        }
         &__header{
             width: 100%;
+            font-size: 0.9em;
         }
     }
+    .avatar{
+        margin: 0 0 1.5em 0;
+    }
+}
 
+@media screen and (max-width: 320px) {
+    h2{
+        font-size: 0.8rem;
+    }
+    .aboutMe__description{
+        font-size: 0.7rem;
+    }
 }
