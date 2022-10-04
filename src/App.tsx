@@ -8,12 +8,12 @@ import Header from './components/header/header';
 import Layout from './components/layout/layout';
 import MyProjects from './components/myProjects/myProjects';
 import Skills from './components/skills/skills';
-import { setStateType, ThemeProvider } from './providers/themeProvider';
+import { LanguageProvider } from './providers/languageProvider';
+import { ThemeProvider } from './providers/themeProvider';
 
 
 
 const App = () => {
-  
   useEffect(() => {
     let intervalId: any
     let currentUserId = 0
@@ -42,10 +42,15 @@ const App = () => {
 
   useEffect(() => {
     const themeLocalStorage = localStorage.getItem('theme')
+    const languageLocalStorage = localStorage.getItem('language')
     if(!themeLocalStorage){
       localStorage.setItem('theme', 'Light')
     }
-  }, [])
+    if(!languageLocalStorage){
+      localStorage.setItem('language', 'Ru')
+    }
+    }, []
+  )
 
   const [coordinatesOfSections, setCoordinatesOfSections] = useState<coordinatesOfSectionsType>({
     aboutMe: 0,
@@ -56,6 +61,7 @@ const App = () => {
   })
   
   return (
+    <LanguageProvider>
     <ThemeProvider>
       <Layout>
         <div className={s.app}>
@@ -73,6 +79,7 @@ const App = () => {
         </div>
       </Layout>
     </ThemeProvider>
+    </LanguageProvider>
   )
 }
 

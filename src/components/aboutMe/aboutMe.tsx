@@ -2,10 +2,15 @@ import React, { FC, useEffect, useRef } from 'react';
 import s from './aboutMe.module.scss';
 import avatar from '../../commons/avatars/myAvatar.jpg'
 import { coordinatesOfSectionsType } from '../../App';
+import useLanguage from '../../hooks/useLanguage';
+import { ruText } from '../../commons/textData/ru';
+import { engText } from '../../commons/textData/eng';
 
 
 const AboutMe: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
   const aboutMeRef = useRef<HTMLElement>()
+  // @ts-ignore
+  const { language, setLanguage } = useLanguage()
 
   useEffect(() => {
     // @ts-ignore
@@ -20,9 +25,11 @@ const AboutMe: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }
     <div ref={aboutMeRef} className={s.aboutMe}>
       <div className={s.aboutMe__content}>
         <div className={s.aboutMe__header}>
-          <h2>Hi, i'm Oleg. FrontEnd developer.</h2>
+          <h2 className={language === 'Ru' ? s.ru__header : s.eng__header}>
+            { language === 'Ru' ? ruText.aboutMe.header : engText.aboutMe.header }
+          </h2>
           <p className={s.aboutMe__description}>
-            Hi, I am considering a change of profession towards frontend development. I studied independently, there is a pat-project using the full stack of technologies specified in the skills block.
+          { language === 'Ru' ? ruText.aboutMe.description : engText.aboutMe.description }
           </p>
         </div>
         <div className={s.avatar}>

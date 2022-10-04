@@ -15,11 +15,17 @@ import './skills.scss'
 import { CSSTransition, Transition } from 'react-transition-group'
 import { coordinatesOfSectionsType } from '../../App';
 import cn from 'classnames'
+import useLanguage from '../../hooks/useLanguage';
+import { ruText } from '../../commons/textData/ru';
+import { engText } from '../../commons/textData/eng';
 
 
 const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
   const [isOnSkills, setIsOnSkills] = useState(true)
   const [isWasInitialized, setIsWasInitialized] = useState(false)
+  
+  // @ts-ignore
+  const { language, setLanguage } = useLanguage()
 
   const skillsDiv = useRef<HTMLDivElement>()
 
@@ -77,12 +83,12 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
       {state =>  {
         // @ts-ignore
         return <div className={s.skills} ref={skillsDiv}>
-            <h2>My professional skills</h2>
+            <h2>{ language === 'Ru' ? ruText.skills.header : engText.skills.header }</h2>
             <div className={s.skills__content}>
               <div className={cn("base__stack", {
                 [state]: isWasInitialized
               } )}>
-                <h3>Base stack</h3>
+                <h3>{ language === 'Ru' ? ruText.skills.baseStack : engText.skills.baseStack }</h3>
                 <ul>
                   <li>
                     <img src={html_css}/>
@@ -110,7 +116,7 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
               <div className={cn("others", {
                 [state]: isWasInitialized
               } )}>
-              <h3>Others skills</h3>
+              <h3>{ language === 'Ru' ? ruText.skills.otherSkills : engText.skills.otherSkills }</h3>
                 <ul>
                   <li>
                     <span>SASS</span>

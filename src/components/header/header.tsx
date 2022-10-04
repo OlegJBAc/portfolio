@@ -4,20 +4,27 @@ import useTheme from '../../hooks/useTheme';
 import s from './header.module.scss';
 import cn from 'classnames'
 import cnBind from 'classnames/bind'
+import useLanguage from '../../hooks/useLanguage';
 
 
 const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
   // @ts-ignore
   const { type, setType } = useTheme()
+  // @ts-ignore
+  const { language, setLanguage } = useLanguage()
   const [ adaptiveMenuActive, setAdaptiveMenuActive ] = useState(false)
 
   const scrollToSection = (section: 'aboutMe' | 'skills' | 'myProjects' | 'contactNow' | 'contacts') => () => {
     window.scrollTo({ top: coordinatesOfSections[section], left: 0, behavior: 'smooth' })
   }
   const cx = cnBind.bind(s)
-  const setTheme = () => {
+  const chooseTheme = () => {
     localStorage.setItem('theme', type === 'Light' ? 'Dark' : 'Light')
     setType(type === 'Light' ? 'Dark' : 'Light')
+  }
+  const chooseLanguage = () => {
+    localStorage.setItem('language', language === 'Ru' ? 'Eng' : 'Ru')
+    setLanguage(language === 'Ru' ? 'Eng' : 'Ru')
   }
   return (
     <div className={cx('header', { 
@@ -28,8 +35,14 @@ const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
                               light: type === 'Light',
                               dark: type === 'Dark',
                             })}
-              onClick={setTheme}>
-        
+              onClick={chooseTheme}>
+      </button>
+      <button className={cx('language__toggle', {
+                              light: type === 'Light',
+                              dark: type === 'Dark',
+                            })}
+              onClick={chooseLanguage}>
+          {language === 'Ru' ? <span>Ru</span> : <span>Eng</span>}
       </button>
       <button className={cx('sideBarVis__btn', {
                 light: type === 'Light',

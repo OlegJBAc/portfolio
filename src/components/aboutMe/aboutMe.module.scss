@@ -20,9 +20,19 @@
         font-size: 1em;
         line-height: 170%;
     }
-    h2{
+    .eng__header{
         display: inline-block;
         width: 33ch;
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid #ffa500;
+        animation: flash-border 0.85s step-end infinite,
+                   printing-text 3s steps(33) 1;
+    }
+    .ru__header{
+        display: inline-block;
+        width: 38ch;
         font-family: monospace;
         white-space: nowrap;
         overflow: hidden;

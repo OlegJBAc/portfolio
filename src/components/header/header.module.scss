@@ -222,3 +222,18 @@
         }
     }
 }
+
+
+.language__toggle{
+    padding: 5px 10px;
+    cursor: pointer;
+    &.light{
+        color: black;
+        background: rgb(228, 225, 225) !important;
+    }
+    &.dark{
+        color: white;
+        background: black !important;
+        box-shadow: inset 0px 0px 5px white;
+    }
+}

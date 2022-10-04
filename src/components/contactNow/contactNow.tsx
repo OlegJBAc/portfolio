@@ -3,10 +3,16 @@ import s from './contactNow.module.scss'
 import { Formik, Form, Field } from "formik"
 import { coordinatesOfSectionsType } from "../../App"
 import { contactAPI } from "../../API/API"
+import { ruText } from "../../commons/textData/ru"
+import { engText } from "../../commons/textData/eng"
+import useLanguage from "../../hooks/useLanguage"
 
 
 const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
     const contactNowRef = useRef<HTMLElement>()
+    // @ts-ignore
+    const { language, setLanguage } = useLanguage()
+
     useEffect(() => {
         // @ts-ignore
         setCoordinatesOfSections((coordinatesOfSections: coordinatesOfSectionsType) => {
@@ -30,21 +36,36 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
     return (
         // @ts-ignore
         <div ref={contactNowRef} className={s.contact}>
-            <h2>Contact with me now</h2>
+            <h2>{ language === 'Ru' ? ruText.contactNow.header : engText.contactNow.header }</h2>
             <div className={s.container}>
                 <Formik initialValues={{ name: '', email: '', phone: '', message: '' }} onSubmit={submit}>
                     <Form className={s.contact__forms}>
                         <div className={s.contact__row_one}>
-                            <Field name='name' placeholder='Enter your name...' id={s.contact__email}/>
-                            <Field type="email" name='email' placeholder='Enter your email...'/>
+                            <Field name='name' placeholder={ language === 'Ru' 
+                                                    ? ruText.contactNow.placeholders.name 
+                                                    : engText.contactNow.placeholders.name 
+                                                } 
+                                id={s.contact__email}/>
+                            <Field type="email" name='email' placeholder={ language === 'Ru' 
+                                                    ? ruText.contactNow.placeholders.email
+                                                    : engText.contactNow.placeholders.email 
+                                                } />
                         </div>
                         <div className={s.contact__row_two}>
-                            <Field name='phone' placeholder='Enter your phone number...'/>
+                            <Field name='phone' placeholder={ language === 'Ru' 
+                                                    ? ruText.contactNow.placeholders.phone 
+                                                    : engText.contactNow.placeholders.phone 
+                                                } />
                         </div>
                         <div className={s.contact__row_three}>
-                            <Field name='message' placeholder='Enter your message...' component='textarea'/>
+                            <Field name='message' placeholder={ language === 'Ru' 
+                                                    ? ruText.contactNow.placeholders.message 
+                                                    : engText.contactNow.placeholders.message
+                                                }  component='textarea'/>
                         </div>
-                        <button type="submit" className={s.send__button}>Send</button>
+                        <button type="submit" className={s.send__button}>
+                            { language === 'Ru' ? 'Отправить' : 'Send' }
+                        </button>
                     </Form>
                 </Formik>
             </div> 

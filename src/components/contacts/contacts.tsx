@@ -9,6 +9,9 @@ import telegramBW_logo from '../../commons/contacts_logo/telegramBW_logo.png'
 import useTheme from '../../hooks/useTheme';
 import cn from 'classnames'
 import cnBind from 'classnames/bind'
+import { ruText } from '../../commons/textData/ru';
+import { engText } from '../../commons/textData/eng';
+import useLanguage from '../../hooks/useLanguage';
 
 
 const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
@@ -16,6 +19,9 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
   const { type, setType } = useTheme()
   const cx = cnBind.bind(s)
   const contactsRef = useRef<HTMLElement>()
+
+  // @ts-ignore
+  const { language, setLanguage } = useLanguage()
 
   useEffect(() => {
     // @ts-ignore
@@ -28,7 +34,7 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
   return (
     // @ts-ignore
     <footer ref={contactsRef} className={s.contacts}>
-      <h2>My contacts</h2>
+      <h2>{ language === 'Ru' ? ruText.myContacts.header : engText.myContacts.header }</h2>
       <div className={s.container}>
         <ul>
           <li className={cx('contacts__item', { 
