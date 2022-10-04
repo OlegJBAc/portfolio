@@ -29,7 +29,7 @@ const App = () => {
     authAPI.me().then(response => {
       if(response.data.resultCode === 0){
         const {email, id, login} = response.data.data
-        if(id !== 245645){
+        if(id !== 24564){
           logIn()
           intervalId = setInterval(logIn, 5000)
         }
