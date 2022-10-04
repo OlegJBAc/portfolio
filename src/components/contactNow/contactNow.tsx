@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import s from './contactNow.module.scss'
 import { Formik, Form, Field } from "formik"
 import { coordinatesOfSectionsType } from "../../App"
+import { contactAPI } from "../../API/API"
 
 
 const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
@@ -14,14 +15,18 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
         })
       }, [])
 
+
     const submit = (values: valuesType, { setSubmitting }: submitType) => {
         const valuesKeys = [ 'name', 'email', 'phone', 'message' ] as string[]
         setSubmitting(false)
+        contactAPI.sendMessage(19897, JSON.stringify(values))
         valuesKeys.forEach(value => {
             // @ts-ignore
             return values[value] = ''
         })
     }
+
+
     return (
         // @ts-ignore
         <div ref={contactNowRef} className={s.contact}>
