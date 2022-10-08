@@ -54,6 +54,8 @@ const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
       <ul className={cx('header__nav', {
                 active: adaptiveMenuActive,
                 notActive: !adaptiveMenuActive,
+                light: type === 'Light',
+                dark: type === 'Dark',
               })}>
         <li onClick={scrollToSection('aboutMe')}>About me</li>
         <li onClick={scrollToSection('skills')}>Skills</li>

@@ -15,6 +15,9 @@ import { ThemeProvider } from './providers/themeProvider';
 
 const App = () => {
   useEffect(() => {
+
+  }, )
+  useEffect(() => {
     let intervalId: any
     let currentUserId = 0
     const logIn = () => {

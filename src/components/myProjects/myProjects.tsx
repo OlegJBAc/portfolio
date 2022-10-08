@@ -29,6 +29,11 @@ const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
                     <div className={s.projects__item_container}>
                         <figure>
                             <figcaption>
+                                <div className={s.projects__toProject}>
+                                    <a target={'_blank'} href="https://olegjbac.github.io/social-network">
+                                        <button>To project</button>
+                                    </a>
+                                </div>
                                 <img src={'http://www.businessrecognition.org/wp-content/uploads/2020/04/effective-social-media-marketing-strategy.jpg'}/>
                                 <a target={'_blank'} href="https://olegjbac.github.io/social-network">
                                     <h3>
@@ -52,8 +57,14 @@ const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
                     <div className={s.projects__item_container}>
                         <figure>
                             <figcaption>
+                                <div className={s.projects__toProject}>
+                                    <a target={'_blank'} href="https://olegjbac.github.io/my-todo">
+                                        <button>To project</button>
+                                    </a>
+                                    
+                                </div>
                                 <img src={'https://media.istockphoto.com/vectors/opened-personal-organizer-with-a-to-do-list-top-view-of-women-hands-vector-id1168738399?k=20&m=1168738399&s=612x612&w=0&h=adldxggj-8azZlhHE-COXj111heThIsmZI0wI7fxdH4='}/>
-                                <a target={'_blank'} href="https://olegjbac.github.io/my-todo/">
+                                <a target={'_blank'} href="https://olegjbac.github.io/my-todo">
                                     <h3>
                                         { language === 'Ru' 
                                             ? ruText.myProjects.toDoHeader 
@@ -75,7 +86,6 @@ const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
         </div>
     )
 }
-
 
 export default MyProjects
 

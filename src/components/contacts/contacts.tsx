@@ -19,11 +19,11 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
   const { type, setType } = useTheme()
   const cx = cnBind.bind(s)
   const contactsRef = useRef<HTMLElement>()
-
   // @ts-ignore
   const { language, setLanguage } = useLanguage()
 
   useEffect(() => {
+
     // @ts-ignore
     setCoordinatesOfSections((coordinatesOfSections: coordinatesOfSectionsType) => {
       // @ts-ignore
@@ -41,7 +41,9 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
                 light: type === 'Light',
                 dark: type === 'Dark',
             })}>
-            <img src={email_logo}/>
+            <a target={'_blank'} href='https://github.com/OlegJBAc'>
+              <img src={email_logo}/>
+            </a>
           </li>
           <li className={cx('contacts__item', { 
                 light: type === 'Light',
@@ -55,7 +57,7 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
                 light: type === 'Light',
                 dark: type === 'Dark',
             })}>
-            <a target={'_blank'} href='https://www.google.ru/'>
+            <a target={'_blank'} href='https://t.me/This00001'>
               <img src={telegram_logo}/>
             </a>
           </li>
