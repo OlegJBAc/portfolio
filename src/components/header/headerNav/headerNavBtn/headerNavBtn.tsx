@@ -14,9 +14,13 @@ const HeaderNavBtn: React.FC<propsType> = ({ adaptiveMenuActive, setAdaptiveMenu
         <button className={cx('headerNav__btn', {
             light: type === 'Light',
             dark: type === 'Dark',
-            })}
+            })} id={adaptiveMenuActive ? s.active : s.notActive}
             onClick={() => setAdaptiveMenuActive(!adaptiveMenuActive)}>
-            <span></span>
+            <div className={s.spans}>
+                <span className={s.spans__top}></span>
+                <span className={s.spans__middle}></span>
+                <span className={s.spans__bottom}></span>
+            </div>
         </button>
     )
 }
