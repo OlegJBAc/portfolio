@@ -3,7 +3,7 @@
 export const engText = {
     aboutMe: {
         header: "Hi, i'm Oleg. FrontEnd developer.",
-        description: 'I am considering a change of profession towards frontend development. I studied independently, there is a pat-project using the full stack of technologies specified in the skills block.',
+        description: 'II am considering a change of profession towards front end development and get a lot of expertise in this area in the future . Over time I could also switch to backend, since I like both, although I tried myself very little in backend, but enough for a general idea. I studied independently, there is a pat-project using the full stack of technologies specified in the skulls black.',
     },
     skills: {
         header: 'My professional skills',
