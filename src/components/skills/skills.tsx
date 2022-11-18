@@ -23,11 +23,10 @@ import { engText } from '../../commons/textData/eng';
 const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
   const [isOnSkills, setIsOnSkills] = useState(true)
   const [isWasInitialized, setIsWasInitialized] = useState(false)
-  
-  // @ts-ignore
+
   const { language, setLanguage } = useLanguage()
 
-  const skillsDiv = useRef<HTMLDivElement>()
+  const skillsDiv = useRef() as React.RefObject<HTMLDivElement>
 
   useEffect(() => {
       // @ts-ignore
@@ -42,6 +41,7 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
       setIsWasInitialized(true)
     }, 100)
   }, [])
+
   const scrollAnim = () => {
     window.addEventListener('scroll', animOnScroll)
     function animOnScroll(){
@@ -81,7 +81,6 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
     <Transition in={isOnSkills}
                 timeout={0}>
       {state =>  {
-        // @ts-ignore
         return <div className={s.skills} ref={skillsDiv}>
             <h2>{ language === 'Ru' ? ruText.skills.header : engText.skills.header }</h2>
             <div className={s.skills__content}>

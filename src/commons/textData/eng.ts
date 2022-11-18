@@ -13,9 +13,9 @@ export const engText = {
     myProjects: {
         header: 'My Projects',
         socialNetworkHeader: 'Social Network',
-        socialNetworkDescription: 'My first project with full technical stack.My first project with full technical stack.My first project with full technical stack.',
+        socialNetworkDescription: 'My first project with full technical stack.My first project with full technical stack.My first project with full technical stack. The project has a mobile version.',
         toDoHeader: 'Todo app',
-        toDoDescription: "It's just my toDo app, it was inspitred by TodoIst.It's just my toDo app, it was inspitred by TodoIstIt's just my toDo app, it was inspitred by TodoIst",
+        toDoDescription: "It's just my toDo app. Local Storage is used as the data storage instead of the server. The project has a mobile version.",
     },
     contactNow: {
         header: 'Contact with me now',

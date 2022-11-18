@@ -8,9 +8,9 @@ import { engText } from '../../commons/textData/eng';
 
 
 const AboutMe: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
-  const aboutMeRef = useRef<HTMLElement>()
-  // @ts-ignore
   const { language, setLanguage } = useLanguage()
+
+  const aboutMeRef = useRef() as React.RefObject<HTMLDivElement>
 
   useEffect(() => {
     // @ts-ignore
@@ -21,7 +21,6 @@ const AboutMe: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }
   }, [])
   
   return (
-    // @ts-ignore
     <div ref={aboutMeRef} className={s.aboutMe}>
       <div className={s.aboutMe__content}>
         <div className={s.aboutMe__header}>
@@ -39,7 +38,6 @@ const AboutMe: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }
     </div>
   );
 }
-
 
 export default AboutMe
 

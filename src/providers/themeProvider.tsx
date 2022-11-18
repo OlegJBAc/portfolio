@@ -7,12 +7,12 @@ interface iContext {
     setType: setStateType<'Light' | 'Dark'>
 }
 
-export const ThemeContext = createContext<{ type: 'Light' | 'Dark' }>({ type: 'Dark' })
+export const ThemeContext = createContext({ type: 'Dark' } as iContext)
 
 export const ThemeProvider: FC<propsType> = ({ children }) => {
     const themeFromLocalStorage = localStorage.getItem('theme') as 'Light' | 'Dark' | null
     const [type, setType] = useState<'Light' | 'Dark'>(themeFromLocalStorage ? themeFromLocalStorage : 'Light')
-    // @ts-ignore
+    
     return <ThemeContext.Provider value={{ type, setType }}>
         { children }
     </ThemeContext.Provider>

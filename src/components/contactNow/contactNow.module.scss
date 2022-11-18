@@ -1,5 +1,5 @@
 .contact{
-    padding: 3em 0;
+    padding: 3em 0 0 0;
     &__forms{
         width: 45%;
         // input{
@@ -49,6 +49,7 @@
             font-size: 1.2em;
             border-radius: 0.3em;
             resize: none;
+            outline: 1px solid black;
         }
     }
 }
@@ -92,5 +93,22 @@
                 }
             }
         }
+    }
+}
+
+.messageSent{
+    opacity: 0;
+    padding: 1.5em 0 0 0;
+    font-size: 1.3rem;
+    transition-property: opacity;
+    &.active{
+        transition-duration: 1s;
+        opacity: 1;
+    }
+    &.light{
+        color: black;
+    }
+    &.dark{
+        color: white;
     }
 }

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from "react"
+import React, { FC, useEffect, useRef, useState } from "react"
 import s from './contactNow.module.scss'
 import { Formik, Form, Field } from "formik"
 import { coordinatesOfSectionsType } from "../../App"
@@ -7,10 +7,18 @@ import { ruText } from "../../commons/textData/ru"
 import { engText } from "../../commons/textData/eng"
 import useLanguage from "../../hooks/useLanguage"
 import { maxLengthVC } from "../../commons/validators/validators"
-
+import cnBind from 'classnames/bind'
+import useTheme from "../../hooks/useTheme"
 
 const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
-    const contactNowRef = useRef<HTMLElement>()
+    const [ messageSent, setMessageSent ] = useState(false)
+
+    const { type } = useTheme()
+    const { language, setLanguage } = useLanguage()
+
+    const contactNowRef = useRef<HTMLElement>() as React.RefObject<HTMLDivElement>
+
+    const cx = cnBind.bind(s)
 
 	const phoneMask = () => {
         const phoneInput = document.querySelectorAll('input[data-tel-input]')
@@ -68,11 +76,7 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
     }
     document.addEventListener("input", phoneMask)
 
-    
-    // @ts-ignore
-    const { language, setLanguage } = useLanguage()
-
-    const maxLength30 = maxLengthVC(5) 
+    const maxLength30 = maxLengthVC(30) 
 
     useEffect(() => {
         // @ts-ignore
@@ -84,19 +88,23 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
 
 
     const submit = ( values: valuesType, { setSubmitting }: submitType) => {
-
         const valuesKeys = [ 'name', 'email', 'phone', 'message' ] as string[]
         setSubmitting(false)
-        contactAPI.sendMessage(19897, JSON.stringify(values))
+        contactAPI.sendMessage(19897, JSON.stringify(values)).then(res => {
+            if(res.status === 200){
+                setMessageSent(true)
+                setTimeout(() => {
+                    setMessageSent(false)
+                }, 3500)
+            }
+        })
         valuesKeys.forEach(value => {
             // @ts-ignore
             return values[value] = ''
         })
     }
 
-
     return (
-        // @ts-ignore
         <div ref={contactNowRef} className={s.contact}>
             <h2>{ language === 'Ru' ? ruText.contactNow.header : engText.contactNow.header }</h2>
             <div className={s.container}>
@@ -142,7 +150,14 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
                         </Form>
                     )}
                 </Formik>
-            </div> 
+            </div>
+            <div className={cx('messageSent', {
+                active: messageSent,
+                light: type === 'Light',
+                dark: type === 'Dark',
+            })}>
+                <span>Message has been sent</span>
+            </div>
         </div>
     )
 }

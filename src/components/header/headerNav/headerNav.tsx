@@ -7,10 +7,11 @@ import HeaderNavBtn from "./headerNavBtn/headerNavBtn"
 
 
 const HeaderNav: React.FC<propsType> = ({ coordinatesOfSections, adaptiveMenuActive, setAdaptiveMenuActive }) => {
-    // @ts-ignore
     const { type, setType } = useTheme()
+
     const cx = cnBind.bind(s)
-    const scrollToSection = (section: 'aboutMe' | 'skills' | 'myProjects' | 'contactNow' | 'contacts') => () => {
+    
+    const scrollToSection = ( section: 'aboutMe' | 'skills' | 'myProjects' | 'contactNow' | 'contacts' ) => () => {
         window.scrollTo({ top: coordinatesOfSections[section], left: 0, behavior: 'smooth' })
     }
 

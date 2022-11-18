@@ -57,7 +57,6 @@
         background-color: rgba(0, 0, 0, 0.897);
     }
 }
-
 .language__toggle{
     padding: 5px 10px;
     margin-right: 2em;
@@ -72,5 +71,21 @@
         color: white;
         background: black !important;
         box-shadow: inset 0px 0px 5px white;
+    }
+}
+@media screen and (max-width: 380px) {
+    .theme__toggle{
+        margin: 10px 1.3em;
+    }
+    .language__toggle{
+        margin-right: 0.9em;
+    }
+}
+@media screen and (max-width: 290px) {
+    .theme__toggle{
+        margin: 10px 0.5em;
+    }
+    .language__toggle{
+        margin-right: 0.5em;
     }
 }

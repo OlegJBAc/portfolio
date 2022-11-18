@@ -2,17 +2,15 @@ import React, { FC, useRef, useState } from 'react';
 import { coordinatesOfSectionsType } from '../../App';
 import useTheme from '../../hooks/useTheme';
 import s from './header.module.scss';
-import cn from 'classnames'
 import cnBind from 'classnames/bind'
 import useLanguage from '../../hooks/useLanguage';
 import HeaderNav from './headerNav/headerNav';
 
 
 const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
-  // @ts-ignore
   const { type, setType } = useTheme()
-  // @ts-ignore
   const { language, setLanguage } = useLanguage()
+
   const [ adaptiveMenuActive, setAdaptiveMenuActive ] = useState(false)
 
   const cx = cnBind.bind(s)
@@ -33,13 +31,15 @@ const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
                               light: type === 'Light',
                               dark: type === 'Dark',
                             })}
-              onClick={chooseTheme}>
+              onClick={chooseTheme}
+              title={'Change theme'}>
       </button>
       <button className={cx('language__toggle', {
                               light: type === 'Light',
                               dark: type === 'Dark',
                             })}
-              onClick={chooseLanguage}>
+              onClick={chooseLanguage}
+              title={'Change language'}>
           {language === 'Ru' ? <span>Ru</span> : <span>Eng</span>}
       </button>
       <HeaderNav coordinatesOfSections={coordinatesOfSections}
@@ -48,7 +48,6 @@ const Header: FC<propsType> = ({ coordinatesOfSections, ...props }) => {
     </div>
   )
 }
-
 
 export default Header
 

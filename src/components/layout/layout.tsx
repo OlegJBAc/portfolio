@@ -4,7 +4,8 @@ import cn from 'classnames'
 import useTheme from "../../hooks/useTheme"
 
 const Layout: FC<propsType> = ({ children }) => {
-    const { type } = useTheme()
+    const { type, setType } = useTheme()
+    
     const changeBodyTheme = () => {
         const body = document.body
         body.classList.remove(type === 'Light' ? 'body__dark' : 'body__light')

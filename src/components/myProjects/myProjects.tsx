@@ -8,8 +8,8 @@ import s from './myProjects.module.scss'
 
 const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
 
-    const myProjectsRef = useRef<HTMLElement>()
-    // @ts-ignore
+    const myProjectsRef = useRef() as React.RefObject<HTMLDivElement>
+
     const { language, setLanguage } = useLanguage()
 
     useEffect(() => {
@@ -21,7 +21,6 @@ const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
     }, [])
 
     return(
-        // @ts-ignore
         <div ref={myProjectsRef} className={s.myProjects}>
             <h2>{ language === 'Ru' ? ruText.myProjects.header : engText.myProjects.header }</h2>
             <ul className={s.projects}>

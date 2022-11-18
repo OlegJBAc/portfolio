@@ -12,11 +12,8 @@ import { LanguageProvider } from './providers/languageProvider';
 import { ThemeProvider } from './providers/themeProvider';
 
 
-
 const App = () => {
-  useEffect(() => {
 
-  }, )
   useEffect(() => {
     let intervalId: any
     let currentUserId = 0
@@ -68,24 +65,23 @@ const App = () => {
     <ThemeProvider>
       <Layout>
         <div className={s.app}>
-          <Header coordinatesOfSections={coordinatesOfSections}/>
+          <Header coordinatesOfSections={coordinatesOfSections} />
           <AboutMe sectionYCoordinate={coordinatesOfSections.aboutMe} 
-                  setCoordinatesOfSections={setCoordinatesOfSections}/>
+                  setCoordinatesOfSections={setCoordinatesOfSections} />
           <Skills sectionYCoordinate={coordinatesOfSections.aboutMe} 
-                  setCoordinatesOfSections={setCoordinatesOfSections}/>
+                  setCoordinatesOfSections={setCoordinatesOfSections} />
           <MyProjects sectionYCoordinate={coordinatesOfSections.aboutMe} 
-                      setCoordinatesOfSections={setCoordinatesOfSections}/>
+                      setCoordinatesOfSections={setCoordinatesOfSections} />
           <ContactNow sectionYCoordinate={coordinatesOfSections.aboutMe} 
-                      setCoordinatesOfSections={setCoordinatesOfSections}/>
+                      setCoordinatesOfSections={setCoordinatesOfSections} />
           <Contacts sectionYCoordinate={coordinatesOfSections.aboutMe} 
-                    setCoordinatesOfSections={setCoordinatesOfSections}/>
+                    setCoordinatesOfSections={setCoordinatesOfSections} />
         </div>
       </Layout>
     </ThemeProvider>
     </LanguageProvider>
   )
 }
-
 
 export default App
 

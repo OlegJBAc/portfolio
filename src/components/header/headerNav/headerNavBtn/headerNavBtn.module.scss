@@ -58,9 +58,14 @@
     }
 }
 
-
-@media screen and (max-width: 1199px){
+@media screen and (min-width: 769px){
     .headerNav__btn{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .headerNav__btn{
+        margin-right: 1rem;
         &.light{
             background: rgb(114, 22, 201) !important;
             span{
@@ -93,5 +98,10 @@
     }
     .headerNav__btn:hover{
         background: rgba(8, 1, 102, 0.589);
+    }
+}
+@media screen and (max-width: 310px) {
+    .headerNav__btn{
+        margin-left: 0.3em;
     }
 }

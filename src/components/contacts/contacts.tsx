@@ -15,15 +15,13 @@ import useLanguage from '../../hooks/useLanguage';
 
 
 const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
-  // @ts-ignore
   const { type, setType } = useTheme()
-  const cx = cnBind.bind(s)
-  const contactsRef = useRef<HTMLElement>()
-  // @ts-ignore
   const { language, setLanguage } = useLanguage()
 
-  useEffect(() => {
+  const contactsRef = useRef() as React.RefObject<HTMLDivElement>
 
+  const cx = cnBind.bind(s)
+  useEffect(() => {
     // @ts-ignore
     setCoordinatesOfSections((coordinatesOfSections: coordinatesOfSectionsType) => {
       // @ts-ignore
@@ -32,7 +30,6 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
   }, [])
 
   return (
-    // @ts-ignore
     <footer ref={contactsRef} className={s.contacts}>
       <h2>{ language === 'Ru' ? ruText.myContacts.header : engText.myContacts.header }</h2>
       <div className={s.container}>
