@@ -10,71 +10,96 @@ import { maxLengthVC } from "../../commons/validators/validators"
 import cnBind from 'classnames/bind'
 import useTheme from "../../hooks/useTheme"
 
+
+const phoneMask = () => {
+  
+  const phoneInput = document.querySelectorAll('input[data-tel-input]')
+
+  const getInputNumbersValue = function(input: HTMLInputElement){
+      return input.value.replace(/\D/g, "")
+  }
+  var onPhonePaste = function (e: any) {
+      var input = e.target,
+          inputNumbersValue = getInputNumbersValue(input);
+          // @ts-ignore
+      var pasted = e.clipboardData || window.clipboardData;
+      if (pasted) {
+          var pastedText = pasted.getData('Text');
+          if (/\D/g.test(pastedText)) {
+              input.value = inputNumbersValue;
+              return;
+          }
+      }
+  }
+
+  const onPhoneInput = function(e: any){
+      let input = e.target
+      let inputNumbersValue = getInputNumbersValue(input)
+      let formattedInputValue = ''
+      let selectionStart = input.selectionStart
+      
+      if(!inputNumbersValue){
+          return input.value = ""
+      }
+
+      if(input.value.length != selectionStart){
+          if(e.data && /\D/g.test(e.data)){
+              input.value = inputNumbersValue
+          }
+          return
+      }
+
+      if(['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1){
+          if(inputNumbersValue[0] == '9') inputNumbersValue = '7' + inputNumbersValue
+          let firstSymbols = (inputNumbersValue[0] == '8') ? '8' : '+7'
+          formattedInputValue = firstSymbols + ' '
+          if(inputNumbersValue.length > 1){
+              formattedInputValue += '(' + inputNumbersValue.substring(1, 4)
+          }
+          if( inputNumbersValue.length >= 5 ){
+              formattedInputValue += ') ' + inputNumbersValue.substring(4, 7)
+          }
+          if( inputNumbersValue.length >= 8 ){
+              formattedInputValue += '-' + inputNumbersValue.substring(7, 9)
+          }
+          if( inputNumbersValue.length >= 10 ){
+              formattedInputValue += '-' + inputNumbersValue.substring(9, 11)
+          }
+      }else{
+          formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
+      }
+      input.value = formattedInputValue
+  }
+  const onPhoneKeyDown = (e: any) => {
+      let input = e.target
+      if(e.keyCode == 8 && getInputNumbersValue(input).length == 1){
+          input.value = ''
+      }
+  }
+  for (let i = 0; i < phoneInput.length; i++) {
+      let input = phoneInput[i]
+      input.addEventListener("input", onPhoneInput)
+      input.addEventListener("keydown", onPhoneKeyDown)
+      input.addEventListener('paste', onPhonePaste, false);
+  }
+}
+
+document.addEventListener("input", phoneMask)
+
+
+
+
 const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
     const [ messageSent, setMessageSent ] = useState(false)
+    const [ phoneInputValue, setPhoneInputValue ] = useState('')
 
     const { type } = useTheme()
     const { language, setLanguage } = useLanguage()
 
     const contactNowRef = useRef<HTMLElement>() as React.RefObject<HTMLDivElement>
+    const inputPhoneRef = useRef<HTMLElement>() as React.RefObject<HTMLInputElement>
 
     const cx = cnBind.bind(s)
-
-	const phoneMask = () => {
-        const phoneInput = document.querySelectorAll('input[data-tel-input]')
-        const getInputNumbersValue = function(input: HTMLInputElement){
-            return input.value.replace(/\D/g, "")
-        }
-        const onPhoneInput = function(e: any){
-            let input = e.target
-            let inputNumbersValue = getInputNumbersValue(input)
-            let formattedInputValue = ''
-            let selectionStart = input.selectionStart
-            if(!inputNumbersValue){
-                return input.value = ""
-            }
-
-            if(input.value.length != selectionStart){
-                if(e.data && /\D/g.test(e.data)){
-                    input.value = inputNumbersValue
-                }
-                return
-            }
-
-            if(['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1){
-                if(inputNumbersValue[0] == '9') inputNumbersValue = '7' + inputNumbersValue
-                let firstSymbols = (inputNumbersValue[0] == '8') ? '8' : '+7'
-                formattedInputValue = firstSymbols + ' '
-                if(inputNumbersValue.length > 1){
-                    formattedInputValue += '(' + inputNumbersValue.substring(1, 4)
-                }
-                if( inputNumbersValue.length >= 5 ){
-                    formattedInputValue += ') ' + inputNumbersValue.substring(4, 7)
-                }
-                if( inputNumbersValue.length >= 8 ){
-                    formattedInputValue += '-' + inputNumbersValue.substring(7, 9)
-                }
-                if( inputNumbersValue.length >= 10 ){
-                    formattedInputValue += '-' + inputNumbersValue.substring(9, 11)
-                }
-            }else{
-                formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
-            }
-            input.value = formattedInputValue
-        }
-        const onPhoneKeyDown = (e: any) => {
-            let input = e.target
-            if(e.keyCode == 8 && getInputNumbersValue(input).length == 1){
-                input.value = ''
-            }
-        }
-        for (let i = 0; i < phoneInput.length; i++) {
-            let input = phoneInput[i]
-            input.addEventListener("input", onPhoneInput)
-            input.addEventListener("keydown", onPhoneKeyDown)
-        }
-    }
-    document.addEventListener("input", phoneMask)
 
     const maxLength30 = maxLengthVC(30) 
 
@@ -86,8 +111,13 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
         })
       }, [])
 
+    const setPhoneInputValueFunc = () => {
+        // @ts-ignore
+        setPhoneInputValue(inputPhoneRef.current?.value)
+    }
 
     const submit = ( values: valuesType, { setSubmitting }: submitType) => {
+        values.phone = phoneInputValue
         const valuesKeys = [ 'name', 'email', 'phone', 'message' ] as string[]
         setSubmitting(false)
         contactAPI.sendMessage(19897, JSON.stringify(values)).then(res => {
@@ -99,6 +129,9 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
             }
         })
         valuesKeys.forEach(value => {
+            if(value === 'phone'){
+                setPhoneInputValue('')
+            }
             // @ts-ignore
             return values[value] = ''
         })
@@ -129,11 +162,13 @@ const ContactNow: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSection
                                     title={errors.email && touched.email && errors.email}/>
                             </div>
                             <div className={s.contact__row_two}>
-                                <Field data-tel-input type='tel' name='phone' placeholder={ language === 'Ru' 
+                                <input data-tel-input type='tel' name='phone' placeholder={ language === 'Ru' 
                                                         ? ruText.contactNow.placeholders.phone 
                                                         : engText.contactNow.placeholders.phone 
                                                     } 
-                                    id={errors.phone && touched.phone ? s.contact__phone_error : s.contact__phone}/>
+                                    id={errors.phone && touched.phone ? s.contact__phone_error : s.contact__phone}
+                                    onInput={setPhoneInputValueFunc}
+                                    ref={inputPhoneRef} value={phoneInputValue}/>
                             </div>
                             <div className={s.contact__row_three}>
                                 <Field name='message' placeholder={ language === 'Ru' 
