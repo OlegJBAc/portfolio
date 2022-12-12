@@ -1,8 +1,29 @@
 .contacts{
     padding-bottom: 1.5em;
-    &__item.light{
-        img{
-            border: 2px solid black;
+    &__item{
+        height: 65px;
+        width: 65px;
+        border-radius: 0.8em;
+        margin: 0em 3em;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.light{
+            img{
+                border: 2px solid black;
+            }
+            &:hover{
+                background: rgb(181, 178, 182);
+            }
+        }
+        &.dark{
+            img{
+                border: 2px solid white;
+            }
+            &:hover{
+                background: rgb(185, 178, 178);
+            }
         }
     }
     .container{
@@ -33,4 +54,7 @@
             margin: 0;
         }
     }
+}
+#github__logo{
+    border: 2px solid black;
 }

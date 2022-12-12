@@ -50,7 +50,12 @@
             border-radius: 0.3em;
             resize: none;
             outline: 1px solid black;
+            &::placeholder{
+                font-size: 1.3rem;
+                font-style: italic;
+            }
         }
+
     }
 }
 .container{
@@ -78,13 +83,14 @@
         }
         &__row_one{
             flex-direction: column;
-            margin-bottom: 1em;
+            margin-bottom: 0.2em;
             input{
                 width: 90%;
                 margin: 0em auto;
                 padding: 0.5em;
                 font-size: 1.2em;
                 border-radius: 0.3em;
+                margin-bottom: 1em;
             }
             #contact__email{
                 margin-bottom: 0.8em;
@@ -92,6 +98,9 @@
                     border: 1px solid red;
                 }
             }
+        }
+        &__row_two{
+            margin-bottom: 1.25em;
         }
     }
 }

@@ -1,8 +1,7 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { coordinatesOfSectionsType } from '../../App';
 import s from './contacts.module.scss';
-import email_logo from '../../commons/contacts_logo/email_logo.webp'
-import emailBW_logo from '../../commons/contacts_logo/emailBW_logo.png'
+import vk_logo from '../../commons/contacts_logo/vk_logo.png'
 import gitHub_logo from '../../commons/contacts_logo/gitHub_logo.png'
 import telegram_logo from '../../commons/contacts_logo/telegram_logo.webp'
 import telegramBW_logo from '../../commons/contacts_logo/telegramBW_logo.png'
@@ -39,7 +38,7 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
                 dark: type === 'Dark',
             })}>
             <a target={'_blank'} href='https://github.com/OlegJBAc'>
-              <img src={email_logo}/>
+              <img src={vk_logo}/>
             </a>
           </li>
           <li className={cx('contacts__item', { 
@@ -47,7 +46,7 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
                 dark: type === 'Dark',
             })}>
             <a target={'_blank'} href='https://github.com/OlegJBAc'>
-              <img src={gitHub_logo}/>
+              <img src={gitHub_logo} id={s.github__logo}/>
             </a>
           </li>
           <li className={cx('contacts__item', { 

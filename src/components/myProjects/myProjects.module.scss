@@ -38,6 +38,7 @@
         width: 37%;
         background: rgb(101, 0, 184);
         color: white;
+        border-radius: 0.3em;
         h3{
             margin: 0.5em 0;
         }
@@ -80,11 +81,12 @@
                 }
             }
         }
-        
+
         img{
             width: 26vw;
             height: 17vw;
             margin: 2em 0em 0em 0em;
+            border-radius: 0.3em;
         }
         a{
             position: sticky;

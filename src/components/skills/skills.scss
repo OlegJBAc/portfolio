@@ -22,11 +22,16 @@ $transitDuration: 1s 2s 3s 2s 1s;
                 transform: translateX(-115%);
                 @for $i from 1 through length($transitDuration){
                     &:nth-child( #{$i} ){
+                        transition-property: transform;
                         transition-duration: nth($transitDuration, $i);
                     }
                 }
                 img{
                     margin-right: 1em;
+                }
+                &:hover{
+                    font-style: italic;
+                    letter-spacing: 0.1ch;
                 }
             }
         }
@@ -36,6 +41,7 @@ $transitDuration: 1s 2s 3s 2s 1s;
     ul{
         li{
             transform: translateX(300%);
+            width: 190px;
         }
     }
     &.exited{
@@ -58,11 +64,16 @@ $transitDuration: 1s 2s 3s 2s 1s;
                 transform: translateX(100%);
                 @for $i from 1 through length($transitDuration){
                     &:nth-child( #{$i} ){
+                        transition-property: transform;
                         transition-duration: nth($transitDuration, $i);
                     }
                 }
                 img{
                     margin-left: 1em;
+                }
+                &:hover{
+                    font-style: italic;
+                    letter-spacing: 0.1ch;
                 }
             }
         }
