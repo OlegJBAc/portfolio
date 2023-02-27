@@ -37,7 +37,7 @@ const Contacts: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections 
                 light: type === 'Light',
                 dark: type === 'Dark',
             })}>
-            <a target={'_blank'} href='https://github.com/OlegJBAc'>
+            <a target={'_blank'} href='https://vk.com/o.karakulin99'>
               <img src={vk_logo}/>
             </a>
           </li>

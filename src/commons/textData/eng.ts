@@ -3,7 +3,11 @@
 export const engText = {
     aboutMe: {
         header: "Hi, i'm Oleg. FrontEnd developer.",
-        description: 'I am considering a change of profession towards front end development and get a lot of expertise in this area in the future . Over time I could also switch to backend, since I like both, although I tried myself very little in backend, but enough for a general idea. I studied independently, there is a pat-project using the full stack of technologies specified in the skills block.',
+        description: 'At the moment I am actively looking for a job, due to the recent closure of the company at my last place of work (also frontend, but I worked with Vue).' +
+            ' As for the technologies used, the basic set is React + Redux + Typescript, however, has also been working with Vue recently.\n' +
+            '\n' +
+            'If necessary, I am ready to switch to other tools, I am interested in new technologies, although, of course, everything depends on the specific situation and the need' +
+            ' for it. My portfolio projects are posted at github, where the full list of technologies specified in the block - My professional skills was used.',
     },
     skills: {
         header: 'My professional skills',

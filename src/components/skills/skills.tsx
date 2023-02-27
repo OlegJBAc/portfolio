@@ -11,6 +11,7 @@ import sass from '../../commons/skills_logos/sass.png'
 import redux from '../../commons/skills_logos/redux.png'
 import redux_form from '../../commons/skills_logos/redux-form.png'
 import react from '../../commons/skills_logos/react.png'
+import vue_logo from '../../commons/skills_logos/vue_logo.png'
 import './skills.scss'
 import { CSSTransition, Transition } from 'react-transition-group'
 import { coordinatesOfSectionsType } from '../../App';
@@ -89,10 +90,7 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
               } )}>
                 <h3>{ language === 'Ru' ? ruText.skills.baseStack : engText.skills.baseStack }</h3>
                 <ul>
-                  <li>
-                    <img src={html_css}/>
-                    <span>HTML\CSS3</span>
-                  </li>
+
                   <li>
                     <img src={js}/>
                     <span>JavaScript(ES6+)</span>
@@ -109,6 +107,10 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
                     <img src={redux}/>
                     <span>Redux\Redux-toolkit</span>
                   </li>
+                  <li>
+                    <img src={vue_logo}/>
+                    <span>Vue</span>
+                  </li>
                 </ul>
               </div>
 
@@ -117,6 +119,10 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
               } )}>
               <h3>{ language === 'Ru' ? ruText.skills.otherSkills : engText.skills.otherSkills }</h3>
                 <ul>
+                  <li>
+                    <span>HTML\CSS3</span>
+                    <img src={html_css}/>
+                  </li>
                   <li>
                     <span>SASS</span>
                     <img src={sass}/>
@@ -129,10 +135,7 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
                     <span>Npm\Yarn</span>
                     <img src={npm_yarn}/>
                   </li>
-                  <li>
-                    <span>Formik\Redux-form</span>
-                    <img src={formik}/>
-                  </li>
+
                   <li>
                     <span>Axios\RTK query</span>
                     <img src={axios_logo}/>

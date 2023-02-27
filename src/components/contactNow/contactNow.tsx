@@ -14,7 +14,6 @@ import useTheme from "../../hooks/useTheme"
 const phoneMask = () => {
   
   const phoneInput = document.querySelectorAll('input[data-tel-input]')
-
   const getInputNumbersValue = function(input: HTMLInputElement){
       return input.value.replace(/\D/g, "")
   }
