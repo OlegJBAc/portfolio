@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.6dd3b1ce.css",
-    "main.js": "/portfolio/static/js/main.775e22cc.js",
+    "main.css": "/portfolio/static/css/main.efbc9bc9.css",
+    "main.js": "/portfolio/static/js/main.3aac4b0c.js",
     "static/js/787.128fc6e9.chunk.js": "/portfolio/static/js/787.128fc6e9.chunk.js",
+    "static/media/social-network.jpg": "/portfolio/static/media/social-network.2546a29b1c70e948225c.jpg",
+    "static/media/rpg.jpg": "/portfolio/static/media/rpg.b4e64481ae6cdb8a67ab.jpg",
     "static/media/react.png": "/portfolio/static/media/react.9afbb41a83f0b139f044.png",
     "static/media/myAvatar.jpg": "/portfolio/static/media/myAvatar.8b5de104c3e271574f0b.jpg",
     "static/media/html_css.png": "/portfolio/static/media/html_css.51c5e4764bd72ed944d3.png",
     "static/media/telegram_logo.webp": "/portfolio/static/media/telegram_logo.be6948c6962cac4685eb.webp",
+    "static/media/to-do.jpg": "/portfolio/static/media/to-do.fdeb89d8ecee91b7cb63.jpg",
     "static/media/ts.png": "/portfolio/static/media/ts.5456c83de8d7fe38aa7e.png",
     "static/media/npm_yarn.webp": "/portfolio/static/media/npm_yarn.ce87be79f36a7abfd9f0.webp",
     "static/media/js.png": "/portfolio/static/media/js.85d8205a84b3b849ec83.png",
     "index.html": "/portfolio/index.html",
-    "main.6dd3b1ce.css.map": "/portfolio/static/css/main.6dd3b1ce.css.map",
-    "main.775e22cc.js.map": "/portfolio/static/js/main.775e22cc.js.map",
+    "main.efbc9bc9.css.map": "/portfolio/static/css/main.efbc9bc9.css.map",
+    "main.3aac4b0c.js.map": "/portfolio/static/js/main.3aac4b0c.js.map",
     "787.128fc6e9.chunk.js.map": "/portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6dd3b1ce.css",
-    "static/js/main.775e22cc.js"
+    "static/css/main.efbc9bc9.css",
+    "static/js/main.3aac4b0c.js"
   ]
 }
