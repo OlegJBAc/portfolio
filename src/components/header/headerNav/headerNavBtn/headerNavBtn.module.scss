@@ -1,12 +1,15 @@
+@import "../../../../adaptive-tools";
+
+
 .headerNav__btn{
-    width: 35px;
-    height: 35px;
-    padding: 5px;
-    display: flex;
+    width: vw(35px);
+    height: vh(35px);
+    padding: vh(5px) vw(5px);
+    display: none;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: 2em;
+    margin-left: vw(32px);
     transition-duration: 0.2s;
     border: none;
     border-radius: 50%;
@@ -14,15 +17,15 @@
     .spans{
         span{
             display: block;
-            width: 20px;
-            height: 2px;
+            width: vw(20px);
+            height: vh(2px);
             transition-duration: 0.3s;
         }
         &__middle{
-            margin-top: 0.4em;
+            margin-top: vh(8px);
         }
         &__bottom{
-            margin-top: 0.4em;
+            margin-top: vh(8px);
         }
     }
     &.light{
@@ -45,7 +48,7 @@
     align-items: inherit;
     .spans{
         &__top{
-            margin: -1px 0px 0px 0px;
+            margin-top: -1px;
             transform: rotate(45deg);
         }
         &__middle{
@@ -58,50 +61,26 @@
     }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (max-width: $mobile-screen-vw){
     .headerNav__btn{
-        display: none;
-    }
-}
-@media screen and (max-width: 768px){
-    .headerNav__btn{
-        margin-right: 1rem;
-        &.light{
-            background: rgb(114, 22, 201) !important;
-            span{
-                background-color: white;
-            }
-        }
-        &.dark{
-            background: rgb(20, 20, 20) !important;
-            span{
-                background-color: whitesmoke;
-            }
-        }
-    
-        border-radius: 50%;
-        cursor: pointer;
-        .spans{
-            span{
-                display: block;
+        display: flex;
+        width: 35px;
+        height: 35px;
+        padding: 5px 5px;
+        margin-left: mobile_vw(32px);
+        .spans {
+            span {
                 width: 20px;
-                height: 2px;
-                transition-duration: 0.3s;
+                height: mobile_vh(2px);
             }
-            &__middle{
-                margin-top: 0.4em;
+
+            &__middle {
+                margin-top: mobile_vh(8px);
             }
-            &__bottom{
-                margin-top: 0.4em;
+
+            &__bottom {
+                margin-top: mobile_vh(8px);
             }
         }
-    }
-    .headerNav__btn:hover{
-        background: rgba(8, 1, 102, 0.589);
-    }
-}
-@media screen and (max-width: 310px) {
-    .headerNav__btn{
-        margin-left: 0.3em;
     }
 }

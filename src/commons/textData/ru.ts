@@ -14,13 +14,23 @@ export const ruText = {
         baseStack: 'Базовый набор технологий',
         otherSkills: 'Другие навыки',
     },
-    myProjects: {
-        header: 'Мои проекты',
-        socialNetworkHeader: 'Social network',
-        socialNetworkDescription: 'Мой 1-ый проект, где использован полный набор технологий из раздела мои профессиональные навыки. Имеет мобильную версию.',
-        toDoHeader: 'Todo app',
-        toDoDescription: "Это простенькое toDo app, в качестве хранилища данных вместо сервера использовано Local Storage. Имеет мобильную версию.",
-    },
+    myProjects: [
+        {
+            name: 'social_network',
+            header: 'Social network',
+            description: 'Мой 1-ый проект, где использован полный набор технологий из раздела мои профессиональные навыки. Имеет мобильную версию',
+        },
+        {
+            name: 'to_do',
+            header: 'Todo app',
+            description: 'Это простенькое toDo app, в качестве хранилища данных вместо сервера использовано Local Storage. Имеет мобильную версию.',
+        },
+        {
+            name: 'rpg',
+            header: 'RPG game',
+            description: 'Это эмуляция RPG игры, где можно увеличивать или уменьшать характеристики своего персонажа. Не имеет мобильной версии.',
+        },
+    ],
     contactNow: {
         header: 'Связаться со мной',
         placeholders: {

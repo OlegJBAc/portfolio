@@ -1,9 +1,15 @@
+@import "../../adaptive-tools";
+
+
 .aboutMe{
     width: 100%;
-    padding: 2em 0em 2em 0em;
+    padding: vh(48px) 0 32px 0;
+    h2 {
+        word-break: break-word;
+    }
     &__content{
         width: 85%;
-        padding: 1.5em 0em 2em 0em;
+        padding: vh(24px) 0 32px 0;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
@@ -11,15 +17,14 @@
     }
     &__header{
         width: 90%;
-        margin-right: 5em;
     }
     &__description{
         width: 85%;
         word-wrap: break-word;
         margin: 0 auto;
         animation: show-desc 3s ease 1;
-        font-size: 1em;
-        line-height: 170%;
+        font-size: vw($base-size);
+        line-height: 250%;
     }
     .eng__header{
         display: inline-block;
@@ -44,11 +49,11 @@
 }
 @keyframes show-desc {
     0% {
-        font-size: 0em;
+        font-size: 0;
         opacity: 0;
     }
     100% {
-        font-size: 1em;
+        font-size: vw($base-size);
         opacity: 1;
     }
 }
@@ -75,7 +80,7 @@
     &__img{
         width: 235px;
         height: 300px;
-        border-radius: 0.5em;
+        border-radius: 0.5rem;
         transform: rotate(0deg);
         animation-name: rotateAvatar;
         animation-duration: 3s;
@@ -85,7 +90,7 @@
 @keyframes rotateAvatar {
     0% {
         transform: rotate(45deg);
-        border-radius: 0.5em;
+        border-radius: 0.5rem;
     }
     50% {
         border-radius: 50%;
@@ -96,33 +101,55 @@
         border-radius: 0.5em;
     }
 }
-@media screen and (max-width: 768px){
+
+
+
+@media screen and (max-width: $mobile-screen-vw){
     .aboutMe{
+        width: 100%;
+        padding: mobile_h(48px) 0 mobile_vh(32px) 0;
         &__content{
+            width: 100%;
             flex-direction: column-reverse;
             align-items: center;
-            width: 100%;
-            margin: 0;
-            padding: 2em 0em 2em 0em;
+            flex-wrap: wrap-reverse;
+            padding: mobile_vh(24px) 0 mobile_vh(32px) 0;
         }
         &__description{
-            font-size: 0.8em;
-        }
-        &__header{
-            width: 100%;
-            font-size: 0.9em;
+            font-size: mobile_vw(24px);
+            animation: show-desc 3s ease 1;
+            line-height: 200%;
+
         }
     }
     .avatar{
-        margin: 0 0 1.5em 0;
+        &__img{
+            width: 350px;
+            height: 450px;
+        }
+    }
+    @keyframes show-desc {
+        0% {
+            font-size: 0;
+            opacity: 0;
+        }
+        100% {
+            font-size: mobile_vw($base-size);
+            opacity: 1;
+        }
     }
 }
 
-@media screen and (max-width: 320px) {
-    h2{
-        font-size: 0.8rem;
-    }
-    .aboutMe__description{
-        font-size: 0.7rem;
+
+@media screen and (max-width: 420px) {
+    .avatar{
+        &__img{
+            width: 220px;
+            height: 280px;
+            border-radius: 0.5rem;
+            transform: rotate(0deg);
+            animation-name: rotateAvatar;
+            animation-duration: 3s;
+        }
     }
 }

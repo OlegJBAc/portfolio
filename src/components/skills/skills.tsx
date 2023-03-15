@@ -9,11 +9,10 @@ import ts from '../../commons/skills_logos/ts.png'
 import npm_yarn from '../../commons/skills_logos/npm_yarn.webp'
 import sass from '../../commons/skills_logos/sass.png'
 import redux from '../../commons/skills_logos/redux.png'
-import redux_form from '../../commons/skills_logos/redux-form.png'
 import react from '../../commons/skills_logos/react.png'
 import vue_logo from '../../commons/skills_logos/vue_logo.png'
 import './skills.scss'
-import { CSSTransition, Transition } from 'react-transition-group'
+import { Transition } from 'react-transition-group'
 import { coordinatesOfSectionsType } from '../../App';
 import cn from 'classnames'
 import useLanguage from '../../hooks/useLanguage';

@@ -1,3 +1,22 @@
+@import "../../adaptive-tools";
+
+
+body{
+    font-size: vw($base-size);
+}
+h2 {
+    font-size: vw(26px);
+}
+h3 {
+    font-size: vw(22px);
+}
+input, textarea {
+    font-size: vw(24px);
+    &::placeholder {
+        font-style: oblique;
+        font-size: vw(24px);
+    }
+}
 .layout{
     width: 100%;
 }
@@ -31,3 +50,22 @@ body::-webkit-scrollbar{
     }
 }
 
+@media screen and (max-width: $mobile-screen-vw) {
+    body{
+        font-size: mobile_vw(24px);
+    }
+    h2 {
+        font-size: mobile_vw(32px);
+    }
+    h3 {
+        font-size: mobile_vw(28px);
+    }
+    input, textarea {
+        font-size: mobile_vw(24px);
+        &::placeholder {
+            font-style: oblique;
+            font-size: mobile_vw(24px);
+        }
+    }
+
+}

@@ -1,10 +1,16 @@
+@import "../../adaptive-tools";
+
+
 .myProjects{
     ul{
         width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         list-style: none;
+        padding: 0;
+
     }
 }
 .projects{
@@ -15,7 +21,7 @@
     &__toProject{
         position: absolute;
         top: 9.3vw;
-        left: 0%;
+        left: 0;
         width: 100%;
         z-index: 10;
         button{
@@ -24,9 +30,10 @@
             font-style: italic;
             letter-spacing: 0.15ch;
             font-weight: 600;
-            padding: 1em;
-            border-radius: 1em;
-            box-shadow: inset 0px 0px 10px rgba(245, 245, 245, 0.788);
+            font-size: vw(22px);
+            padding: vh($base-size) vw($base-size);
+            border-radius: $base-size;
+            box-shadow: inset 0 0 vw(10px) rgba(245, 245, 245, 0.788);
             cursor: pointer;
             &:hover{
                 background: rgb(185, 255, 240);
@@ -38,19 +45,20 @@
         width: 37%;
         background: rgb(101, 0, 184);
         color: white;
-        border-radius: 0.3em;
+        border-radius: 6px;
+        margin-top: vh(20px);
         h3{
-            margin: 0.5em 0;
+            margin: vh(8px) 0;
         }
         figure{
             position: relative;
-            margin: 1em;
-            padding-bottom: 1em;
+            margin: vh($base-size) vw($base-size);
+            padding-bottom: vh($base-size);
             line-height: 170%;
             &::before{
                 content: '';
                 position: absolute;
-                top: calc(0%);
+                top: 0;
                 display: block;
                 width: calc(100% + 2px);
                 height: 100%;
@@ -85,8 +93,8 @@
         img{
             width: 26vw;
             height: 17vw;
-            margin: 2em 0em 0em 0em;
-            border-radius: 0.3em;
+            margin-top: vh(32px);
+            border-radius: 6px;
         }
         a{
             position: sticky;
@@ -101,36 +109,40 @@
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: $mobile-screen-vw) {
     .myProjects{
         ul{
             flex-direction: column-reverse;
             align-items: center;
+            flex-wrap: wrap-reverse;
         }
     }
     .projects{
-        &__toProject{
-            top: 19vw;
+        &__toProject {
+            top: 28%;
+            button{
+                padding: mobile_vh($base-size) mobile_vw($base-size);
+                font-size: mobile_vw(26px);
+
+            }
         }
         &__item{
-            width: 80%;
-            margin: 1em 1.5em 0em 0em;
-            img{
-                width: 50vw;
-                height: 35vw;
+            width: 95%;
+            margin-top: mobile_vh(20px);
+            h3 {
+                margin: mobile_vh(8px) 0;
             }
-        }
-    }
-}
+            figure {
+                margin: mobile_vh($base-size) mobile_vw($base-size);
+                padding-bottom: mobile_vh($base-size);
+            }
 
-@media screen and (max-width: 450px){
-    .projects{
-        &__toProject{
-            top: 22vw;
-            button{
-                font-size: 0.8rem;
-                padding: 0.7em;
+            img {
+                width: 80%;
+                height: mobile_vh(200px);
+                margin-top: mobile_vh(32px);
             }
         }
     }
+
 }

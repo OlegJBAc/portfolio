@@ -44,7 +44,7 @@ const App = () => {
     const themeLocalStorage = localStorage.getItem('theme')
     const languageLocalStorage = localStorage.getItem('language')
     if(!themeLocalStorage){
-      localStorage.setItem('theme', 'Light')
+      localStorage.setItem('theme', 'Dark')
     }
     if(!languageLocalStorage){
       localStorage.setItem('language', 'Ru')

@@ -1,11 +1,16 @@
+@import "../../adaptive-tools";
+
+
 .header{
     position: fixed;
-    height: 50px;
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     z-index: 100;
+    &__content {
+        height: vh(70px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
     &.light{
         background: rgb(152, 61, 238);
         color: white;
@@ -17,11 +22,10 @@
 }
 
 .theme__toggle{
-    margin-right: 2em;
     width: 80px;
-    height: 32px;
-    margin: 10px 5em;
-    padding: 0px;
+    height: vh(40px);
+    margin: vh(10px) vw(80px);
+    padding: 0;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -31,7 +35,7 @@
     &:before{
         content: '';
         width: 30px;
-        height: 29px;
+        height: vh(35px) !important;
         background-color: white;
         border-radius: 50%;
         display: flex;
@@ -50,7 +54,7 @@
     &.dark{
         &:before{
             transform: translateX(153%);
-            height: 28px;
+            height: vh(28px);
             background-color: white;
             transition-duration: 1s;
         }
@@ -58,11 +62,11 @@
     }
 }
 .language__toggle{
-    padding: 5px 10px;
-    margin-right: 2em;
-    border-radius: 0.4em;
-    width: 60px;
+    padding: 8px 20px;
+    margin-right: vw(50px);
+    border-radius: 6px;
     cursor: pointer;
+    font-size: vw(18px);
     &.light{
         color: black;
         background: rgb(228, 225, 225) !important;
@@ -70,22 +74,37 @@
     &.dark{
         color: white;
         background: black !important;
-        box-shadow: inset 0px 0px 5px white;
+        box-shadow: inset 0 0 5px white;
     }
 }
-@media screen and (max-width: 380px) {
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .header{
+        &__content {
+            height: mobile_vh(50px);
+            padding-right: mobile_vw(20px);
+        }
+    }
     .theme__toggle{
-        margin: 10px 1.3em;
+        width: 80px;
+        height: mobile_vh(32px);
+        margin: mobile_vh(10px) mobile_vw(80px);
+        &:before{
+            width: 30px;
+            height: mobile_vh(29px);
+        }
+        &.dark{
+            &:before{
+                height: mobile_vh(28px);
+            }
+        }
     }
     .language__toggle{
-        margin-right: 0.9em;
+        padding: vh(8px) 10px;
+        margin-right: 32px;
+        width: 60px;
+        font-size: mobile_vw(20px);
     }
 }
-@media screen and (max-width: 290px) {
-    .theme__toggle{
-        margin: 10px 0.5em;
-    }
-    .language__toggle{
-        margin-right: 0.5em;
-    }
-}
+

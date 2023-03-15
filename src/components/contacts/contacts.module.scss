@@ -1,10 +1,13 @@
+@import "../../adaptive-tools";
+
+
 .contacts{
-    padding-bottom: 1.5em;
+    padding-bottom: vh(24px);
     &__item{
-        height: 65px;
-        width: 65px;
-        border-radius: 0.8em;
-        margin: 0em 3em;
+        height: vh(65px);
+        width: vw(65px);
+        border-radius: 14px;
+        margin: 0 vw(48px);
         padding: 0;
         display: flex;
         justify-content: center;
@@ -45,7 +48,7 @@
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
-                    margin: 0 2em;
+                    margin: 0 vw(32px);
                     cursor: pointer;
                 }
             }
@@ -57,4 +60,27 @@
 }
 #github__logo{
     border: 2px solid black;
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw){
+    .contacts{
+        padding-bottom: mobile_vh(24px);
+        &__item{
+            height: mobile_vh(65px);
+            width: mobile_vw(65px);
+            margin: 0 mobile_vw(48px);
+        }
+        .container {
+            ul {
+                li {
+                   img {
+                       width: 50px;
+                       height: 50px;
+                   }
+                }
+            }
+        }
+    }
 }

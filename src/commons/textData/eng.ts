@@ -14,13 +14,23 @@ export const engText = {
         baseStack: 'Base stack',
         otherSkills: 'Others skills',
     },
-    myProjects: {
-        header: 'My Projects',
-        socialNetworkHeader: 'Social Network',
-        socialNetworkDescription: 'My first project with full technical stack.My first project with full technical stack.My first project with full technical stack. The project has a mobile version.',
-        toDoHeader: 'Todo app',
-        toDoDescription: "It's just my toDo app. Local Storage is used as the data storage instead of the server. The project has a mobile version.",
-    },
+    myProjects: [
+        {
+            name: 'social_network',
+            header: 'Social network',
+            description: 'My first project with full technical stack.My first project with full technical stack.My first project with full technical stack. The project has a mobile version.',
+        },
+        {
+            name: 'to_do',
+            header: 'Todo app',
+            description: 'It\'s just my toDo app. Local Storage is used as the data storage instead of the server. The project has a mobile version.',
+        },
+        {
+            name: 'rpg',
+            header: 'RPG game',
+            description: 'This is an emulation of an RPG game where you can increase or decrease the characteristics of your character. Doesn\'t have a mobile version.',
+        },
+    ],
     contactNow: {
         header: 'Contact with me now',
         placeholders: {

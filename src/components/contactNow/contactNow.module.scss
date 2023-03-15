@@ -1,20 +1,19 @@
+@import "../../adaptive-tools";
+
+
 .contact{
-    padding: 3em 0 0 0;
+    padding-top: vh(36px);
     &__forms{
         width: 45%;
-        // input{
-
-        // }
     }
     &__row_one{
         display: flex;
         justify-content: space-around;
-        margin-bottom: 1em;
+        margin-bottom: vh($base-size);
         input{
             width: 40%;
-            padding: 0.5em;
-            font-size: 1.2em;
-            border-radius: 0.3em;
+            padding: vh(8px) vw(8px);
+            border-radius: 5px;
         }
         #contact__name{
             &_error{
@@ -30,30 +29,24 @@
         }
     }
     &__row_two{
-        margin-bottom: 1em;
+        margin-bottom: vh($base-size);
         input{
             width: 90%;
-            margin: 0em auto;
-            padding: 0.5em;
-            font-size: 1.2em;
-            border-radius: 0.3em;
+            margin: 0 auto;
+            padding: vh(8px) vw(8px);
+            border-radius: 5px;
         }
     }
     &__row_three{
-        margin-bottom: 1em;
+        margin-bottom: vh($base-size);
         textarea{
             width: 90%;
-            height: 200px;
-            margin: 0em auto;
-            padding: 0.5em;
-            font-size: 1.2em;
-            border-radius: 0.3em;
+            height: 220px;
+            margin: 0 auto;
+            padding: vh(8px) vw(8px);
+            border-radius: 5px;
             resize: none;
             outline: 1px solid black;
-            &::placeholder{
-                font-size: 1.3rem;
-                font-style: italic;
-            }
         }
 
     }
@@ -64,51 +57,21 @@
     align-items: center;
 }
 .send__button{
-    width: 92.5%;
-    height: 2em;
-    margin: 0em auto;
+    width: 90%;
+    padding: vh(8px) 0;
+    margin: 0 auto;
     background: rgb(111, 21, 228);
     color: white;
-    border-radius: 0.3em;
-    font-size: 1.3em;
+    border-radius: 5px;
+    font-size: vw(20px);
     border: none;
     cursor: pointer;
 }
 
-@media screen and (max-width: 992px){
-    .contact{
-        padding: 3em 0;
-        &__forms{
-            width: 80%;
-        }
-        &__row_one{
-            flex-direction: column;
-            margin-bottom: 0.2em;
-            input{
-                width: 90%;
-                margin: 0em auto;
-                padding: 0.5em;
-                font-size: 1.2em;
-                border-radius: 0.3em;
-                margin-bottom: 1em;
-            }
-            #contact__email{
-                margin-bottom: 0.8em;
-                &_error{
-                    border: 1px solid red;
-                }
-            }
-        }
-        &__row_two{
-            margin-bottom: 1.25em;
-        }
-    }
-}
-
 .messageSent{
     opacity: 0;
-    padding: 1.5em 0 0 0;
-    font-size: 1.3rem;
+    padding-top: vh(24px);
+    font-size: vw(20px);
     transition-property: opacity;
     &.active{
         transition-duration: 1s;
@@ -121,3 +84,45 @@
         color: white;
     }
 }
+
+@media screen and (max-width: $mobile-screen-vw){
+    .contact{
+        padding-top: mobile_vh(36px);
+        &__forms{
+            width: 95%;
+        }
+        &__row_one{
+            flex-direction: column;
+            margin-bottom: mobile_vh($base-size);
+            justify-content: center;
+            align-items: center;
+            input{
+                padding: mobile_vh(15px) mobile_vw(15px);
+                width: 90%;
+                margin-top: mobile_vh(16px);
+            }
+        }
+        &__row_two{
+            margin-bottom: mobile_vh($base-size);
+            input{
+                padding: mobile_vh(15px) mobile_vw(15px);
+            }
+        }
+        &__row_three{
+            margin-bottom: mobile_vh($base-size);
+            textarea{
+                height: mobile_vh(220px);
+                padding: mobile_vh(15px) mobile_vw(15px);
+            }
+
+        }
+    }
+    .send__button{
+        font-size: mobile_vw(24px);
+        padding: mobile_vh(12px) 0;
+    }
+    .messageSent{
+        padding-top: mobile_vh(24px);
+    }
+}
+
