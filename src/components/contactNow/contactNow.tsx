@@ -17,6 +17,7 @@ const phoneMask = () => {
   const getInputNumbersValue = function(input: HTMLInputElement){
       return input.value.replace(/\D/g, "")
   }
+
   var onPhonePaste = function (e: any) {
       var input = e.target,
           inputNumbersValue = getInputNumbersValue(input);
