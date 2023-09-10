@@ -108,7 +108,7 @@ const Skills: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections })
                   </li>
                   <li>
                     <img src={vue_logo}/>
-                    <span>Vue</span>
+                    <span>Vue\Nuxt</span>
                   </li>
                 </ul>
               </div>

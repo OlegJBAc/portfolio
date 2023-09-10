@@ -7,7 +7,7 @@ import { v4 } from 'uuid'
 
 const MyProjects: FC<propsType> = ({ sectionYCoordinate, setCoordinatesOfSections }) => {
 
-    const [projects] = useState<projectsType[]>(['social-network', 'to-do', 'rpg'])
+    const [projects] = useState<projectsType[]>(['social-network', 'to-do', 'rpg', 'pitbel'])
     const myProjectsRef = useRef() as React.RefObject<HTMLDivElement>
 
 
@@ -40,4 +40,4 @@ interface propsType {
     setCoordinatesOfSections: (coordinatesOfSections: coordinatesOfSectionsType) => void
 }
 
-export type projectsType = 'to-do' | 'social-network' | 'rpg'
+export type projectsType = 'to-do' | 'social-network' | 'rpg' | 'pitbel'

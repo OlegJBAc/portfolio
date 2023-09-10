@@ -19,16 +19,25 @@ export const ruText = {
             name: 'social_network',
             header: 'Social network',
             description: 'Мой 1-ый проект, где использован полный набор технологий из раздела мои профессиональные навыки. Имеет мобильную версию',
+            stack: 'React, TS'
         },
         {
             name: 'to_do',
             header: 'Todo app',
             description: 'Это простенькое toDo app, в качестве хранилища данных вместо сервера использовано Local Storage. Имеет мобильную версию.',
+            stack: 'React, TS'
         },
         {
             name: 'rpg',
             header: 'RPG game',
             description: 'Это эмуляция RPG игры, где можно увеличивать или уменьшать характеристики своего персонажа. Не имеет мобильной версии.',
+            stack: 'React, TS'
+        },
+        {
+            name: 'pitbel',
+            header: 'Pitbel group website',
+            description: 'Корпоративный сайт для компании Pitbel group.',
+            stack: 'Nuxt 3, TS'
         },
     ],
     contactNow: {

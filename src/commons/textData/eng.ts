@@ -1,5 +1,3 @@
-
-
 export const engText = {
     aboutMe: {
         header: "Hi, i'm Oleg. FrontEnd developer.",
@@ -19,16 +17,25 @@ export const engText = {
             name: 'social_network',
             header: 'Social network',
             description: 'My first project with full technical stack.My first project with full technical stack.My first project with full technical stack. The project has a mobile version.',
+            stack: 'React, TS'
         },
         {
             name: 'to_do',
             header: 'Todo app',
             description: 'It\'s just my toDo app. Local Storage is used as the data storage instead of the server. The project has a mobile version.',
+            stack: 'React, TS'
         },
         {
             name: 'rpg',
             header: 'RPG game',
             description: 'This is an emulation of an RPG game where you can increase or decrease the characteristics of your character. Doesn\'t have a mobile version.',
+            stack: 'React, TS'
+        },
+        {
+            name: 'pitbel',
+            header: 'Pitbel group website',
+            description: 'Corporate website for Pitbel group.',
+            stack: 'Nuxt 3, TS'
         },
     ],
     contactNow: {
